@@ -1,0 +1,42 @@
+# Frontend files
+/.vscode
+.DS_Store
+*.log
+
+# Node.js/Backend
+/node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Cache
+.cache
+
+# Build directories
+/dist
+/build
+/public/assets
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+._*
+
+# IDE specific files
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Testing
+/coverage

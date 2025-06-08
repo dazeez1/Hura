@@ -1,0 +1,64 @@
+:root {
+  --main-text: #111827;
+  --light-text: #ffffff;
+  --btn-primary: #f7c600;
+  --light-card: #e5e7eb;
+  --logo: #047258;
+  --cta-bg: #2271b3;
+  --form-text: #6b7280;
+}
+
+/* == universal Styling == */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+nav {
+  max-width: 137.2rem;
+  padding: 0 8rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightblue;
+}
+
+header {
+  width: 100%;
+  max-height: 83.5rem;
+  overflow: hidden;
+}
+
+header img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
