@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./frontend/src/css/main.css" />
+    <title>Hura</title>
     <script
       src="https://kit.fontawesome.com/f418c1c995.js"
       crossorigin="anonymous"
@@ -10,14 +12,12 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
     </style>
-    <title>Hura</title>
-    <link rel="stylesheet" href="./frontend/src/css/main.css" />
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <a href="#"
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="nav-container">
+          <a href="#"
           ><img
             src="./frontend/public/images/logo.png"
             width="130px"
@@ -25,46 +25,45 @@
             alt="logo"
         /></a>
 
-        <ul class="nav-menu">
-          <li><a href="#" class="nav-link">About</a></li>
-          <li><a href="#" class="nav-link">Contact</a></li>
-          <li><a href="#" class="btn btn-primary">Sign Up</a></li>
-          <li><a href="#" class="btn btn-outline">Login</a></li>
-        </ul>
+          <ul class="nav-menu">
+            <li><a href="#" class="nav-link">About</a></li>
+            <li><a href="#" class="nav-link">Contact</a></li>
+            <li><a href="#" class="btn btn-primary">Sign Up</a></li>
+            <li><a href="#" class="btn btn-outline">Login</a></li>
+          </ul>
 
-        <button class="hamburger" onclick="toggleMenu()">☰</button>
-      </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-image">
-        <img
-          src="./frontend/public/images/hero.jpeg"
-          alt="Beautiful Rwanda landscape with mountains"
-        />
-      </div>
-      <div class="hero-content">
-        <h1>Explore Rwanda with Hura, Your AI Travel Companion</h1>
-        <p>Ask questions. Get live help. Discover local culture.</p>
-        <div class="hero-buttons">
-          <a href="#" class="btn btn-primary btn-hero">Start Chatting</a>
-          <a href="#" class="btn btn-outline btn-hero">Try on WhatsApp</a>
+          <button class="hamburger" onclick="toggleMenu()">☰</button>
         </div>
-      </div>
-    </section>
+      </nav>
 
-    <!-- Features Section -->
-    <section class="features">
-      <div class="features-container">
-        <h2>How Hura Helps</h2>
-        <h3 class="features-subtitle">Your AI Travel Companion</h3>
-        <p class="features-description">
-          Explore Rwanda with ease using Hura's multilingual AI chatbot.
-        </p>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Explore Rwanda with Hura, Your AI Travel Companion</h1>
+          <p>Ask questions. Get live help. Discover local culture.</p>
+          <div class="hero-buttons">
+            <a href="#" class="btn btn-primary btn-hero">Start Chatting</a>
+            <a href="#" class="btn btn-outline btn-hero">Try on WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img
+            src="./frontend/public/images/hero.jpeg" alt="Beautiful Rwanda landscape with mountains"
+          />
+        </div>
+      </section>
 
-        <div class="features-flex">
-          <div class="feature-card">
+      <!-- Features Section -->
+      <section class="features">
+        <div class="features-container">
+          <h2>How Hura Helps</h2>
+          <h3 class="features-subtitle">Your AI Travel Companion</h3>
+          <p class="features-description">
+            Explore Rwanda with ease using Hura's multilingual AI chatbot.
+          </p>
+
+          <div class="features-grid">
+        <div class="feature-card">
             <img
               src="./frontend/public/images/icons/Chat.png"
               width="25px"
@@ -75,7 +74,7 @@
           </div>
           <div class="feature-card">
             <img
-              src="./frontend/public/images/icons/Cultural.png"
+            src="./frontend/public/images/icons/Cultural.png"
               width="25px"
               alt="Chat Icon"
             />
@@ -84,7 +83,7 @@
           </div>
           <div class="feature-card">
             <img
-              src="./frontend/public/images/icons/location.png"
+            src="./frontend/public/images/icons/location.png"
               width="25px"
               alt="Chat Icon"
             />
@@ -92,36 +91,35 @@
             <p>Itineraries, places to visit, live info</p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Chat Preview Section -->
-    <section class="chat-preview">
-      <h2>Live Chat Preview</h2>
-      <div class="chat-container">
-        <img src="./frontend/public/images/preview.png" alt="Chat Preview" />
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <section class="footer-container">
-        <div class="details">
-          <h2><a href="#">About</a></h2>
-          <h2><a href="#">Contact</a></h2>
-          <h2><a href="#">Admin Login</a></h2>
+      <!-- Chat Preview Section -->
+      <section class="chat-preview">
+        <h2>Live Chat Preview</h2>
+        <div class="chat-container">
+            <img  src="./frontend/public/images/preview.png" alt="Chat Preview">
         </div>
-        <div class="Social">
-          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2><a href="#">About</a></h2>
+                <h2><a href="#">Contact</a></h2>
+                <h2><a href="#">Admin Login</a></h2>
+            </div>
+                <div class="social-icons">
+                     <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                     <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
         </div>
         <div class="footer-bottom">
           <p>© 2024 Hura. All rights reserved.</p>
         </div>
-      </section>
-    </footer>
+      </footer>
 
-    <script src="./frontend/src/js/main.js"></script>
+      <script src="./frontend/src/js/main.js"></script>
   </body>
 </html>
