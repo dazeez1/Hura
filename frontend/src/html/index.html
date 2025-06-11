@@ -3,27 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kinyabridge</title>
+    <script
+      src="https://kit.fontawesome.com/f418c1c995.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+    <title>Hura</title>
     <link rel="stylesheet" href="../css/main.css" />
   </head>
   <body>
-    <nav>
-      <div class="navbar">
-        <h1><a href="#">Kinyabridge</a></h1>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Billing</a></li>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#"
+          ><img
+            src="../../public/images/logo.png"
+            width="130px"
+            height="50px"
+            alt="logo"
+        /></a>
+
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link">About</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+          <li><a href="#" class="btn btn-primary">Sign Up</a></li>
+          <li><a href="#" class="btn btn-outline">Login</a></li>
         </ul>
-        <div>
-          <button><a href="#">Sign In</a></button>
-          <button><a href="#">Get Started</a></button>
-        </div>
+
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
       </div>
     </nav>
 
-    <header>
-      <img src="../../public/images/hero.png" alt="" />
-    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-image">
+        <img
+          src="../../public/images/hero.jpeg"
+          alt="Beautiful Rwanda landscape with mountains"
+        />
+      </div>
+      <div class="hero-content">
+        <h1>Explore Rwanda with Hura, Your AI Travel Companion</h1>
+        <p>Ask questions. Get live help. Discover local culture.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-primary btn-hero">Start Chatting</a>
+          <a href="#" class="btn btn-outline btn-hero">Try on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+      <div class="features-container">
+        <h2>How Hura Helps</h2>
+        <h3 class="features-subtitle">Your AI Travel Companion</h3>
+        <p class="features-description">
+          Explore Rwanda with ease using Hura's multilingual AI chatbot.
+        </p>
+
+        <div class="features-flex">
+          <div class="feature-card">
+            <img
+              src="../../public/images/icons/Chat.png"
+              width="25px"
+              alt="Chat Icon"
+            />
+            <h3>Multilingual Chat</h3>
+            <p>Talk in English, Kinyarwanda, or French</p>
+          </div>
+          <div class="feature-card">
+            <img
+              src="../../public/images/icons/Cultural.png"
+              width="25px"
+              alt="Chat Icon"
+            />
+            <h3>Cultural Guidance</h3>
+            <p>Etiquette tips, greetings, dos and don'ts</p>
+          </div>
+          <div class="feature-card">
+            <img
+              src="../../public/images/icons/location.png"
+              width="25px"
+              alt="Chat Icon"
+            />
+            <h3>Smart Travel Help</h3>
+            <p>Itineraries, places to visit, live info</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chat Preview Section -->
+    <section class="chat-preview">
+      <h2>Live Chat Preview</h2>
+      <div class="chat-container">
+        <img src="../../public/images/preview.png" alt="Chat Preview" />
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <section class="footer-container">
+        <div class="details">
+          <h2><a href="#">About</a></h2>
+          <h2><a href="#">Contact</a></h2>
+          <h2><a href="#">Admin Login</a></h2>
+        </div>
+        <div class="Social">
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2024 Hura. All rights reserved.</p>
+        </div>
+      </section>
+    </footer>
+
+    <script src="../js/main.js"></script>
   </body>
 </html>
