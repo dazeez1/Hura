@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hura - Feedback</title>
+    <!-- CSS Styling -->
+    <link rel="stylesheet" href="../css/feed.css" />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/f418c1c995.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <a href="./dashboard.html"
+              ><img
+                src="../../public/images/logo.png"
+                width="130px"
+                height="50px"
+                alt="logo"
+            /></a>
+          </div>
+          <button class="hamburger-menu" id="hamburgerMenu">
+            <span class="hamburger-icon">☰</span>
+            <span class="close-icon">✕</span>
+          </button>
+        </div>
+        <nav class="nav-menu" id="navMenu">
+          <a href="./dashboard.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="./setting.html" class="nav-item">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+          </a>
+          <a href="#" class="nav-item active">
+            <i class="fas fa-comment-alt"></i>
+            <span class="text">Feedback</span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Main Header -->
+        <header class="main-header">
+          <h1>Feedback</h1>
+          <div class="user-profile">
+            <span>Mariam Azeez</span>
+            <div class="user-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+          </div>
+        </header>
+
+        <!-- Flagged for Review -->
+        <section class="flagged-section">
+          <h2>Review flagged User sessions</h2>
+          <div class="flagged-list" id="flagged-list">
+            <!-- Flagged items will be injected by JavaScript -->
+          </div>
+        </section>
+
+        <!-- Recent Feedback -->
+        <section class="recent-feedback">
+          <h2>Recent Feedback</h2>
+          <div class="feedback-table-container">
+            <table class="feedback-table">
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Chatbot</th>
+                  <th>Date</th>
+                  <th>Reason</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="feedback-tbody">
+                <!-- Feedback rows will be injected by JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../js/feed.js"></script>
+  </body>
+</html>

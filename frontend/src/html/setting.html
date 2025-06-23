@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hura - Setting</title>
+    <!-- Css Styling -->
+    <link rel="stylesheet" href="../css/set.css" />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/f418c1c995.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Font Style -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <a href="./dashboard.html"
+              ><img
+                src="../../public/images/logo.png"
+                width="130px"
+                height="50px"
+                alt="logo"
+            /></a>
+          </div>
+
+          <button class="hamburger-menu" id="hamburgerMenu">
+            <span class="hamburger-icon">☰</span>
+            <span class="close-icon">✕</span>
+          </button>
+        </div>
+
+        <nav class="nav-menu" id="navMenu">
+          <a href="./dashboard.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+          </a>
+
+          <a href="#" class="nav-item active">
+            <i class="fas fa-cog"></i>
+            Settings
+          </a>
+
+          <a href="./feedback.html" class="nav-item">
+            <i class="fas fa-comment-alt"></i>
+            Feedback
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="settings-header">
+          <h1>Settings</h1>
+        </div>
+
+        <div class="success-message" id="successMessage">
+          <i class="fas fa-check-circle"></i> Settings saved successfully!
+        </div>
+
+        <form class="settings-form" id="settingsForm">
+          <!-- Photo Section -->
+          <section class="photo-section">
+            <p class="section-title">Your Photo</p>
+
+            <div class="photo-upload">
+              <div class="photo-placeholder" id="photoPlaceholder">
+                <i class="fas fa-user"></i>
+              </div>
+
+              <div class="photo-info">
+                <p class="photo-requirements">
+                  <strong
+                    >File smaller than 10MB and at least 400px by 400px.</strong
+                  ><br />
+                  This image will be shown on your dashboard, and will help
+                  other users recognize you.
+                </p>
+
+                <input
+                  type="file"
+                  id="photoInput"
+                  accept="image/*"
+                  style="display: none"
+                />
+                <button
+                  type="button"
+                  class="upload-btn"
+                  onclick="document.getElementById('photoInput').click()"
+                >
+                  Upload photo
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Personal Information -->
+          <section class="form-section">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="displayName">Display name</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  id="displayName"
+                  value="Mariam Azeez"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="fullName">Full name</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  id="fullName"
+                  value="Mariam Azeez"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="email">Email address</label>
+                <input
+                  type="email"
+                  class="form-input"
+                  id="email"
+                  value="m.azeez@hura.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone number</label>
+                <input
+                  type="tel"
+                  class="form-input"
+                  id="phone"
+                  value="+250 123456789"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <div class="password-group">
+                  <input
+                    type="password"
+                    class="form-input"
+                    id="password"
+                    value="password123"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="password-toggle"
+                    onclick="togglePassword()"
+                  >
+                    <i class="fas fa-eye-slash" id="passwordIcon"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <!-- Empty for layout -->
+              </div>
+            </div>
+          </section>
+
+          <!-- Notifications Section -->
+          <section class="notification-section">
+            <div class="notification-item">
+              <div class="notification-info">
+                <h3>Turn on all notifications</h3>
+                <p>Receive all notifications by toggling this button</p>
+              </div>
+
+              <label class="toggle-switch">
+                <input
+                  type="checkbox"
+                  class="toggle-input"
+                  id="allNotifications"
+                />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </section>
+
+          <!-- Save Button -->
+          <button type="submit" class="save-btn">
+            <i class="fas fa-save"></i> Save changes
+          </button>
+        </form>
+      </main>
+    </div>
+
+    <!-- Js Linking -->
+    <script src="../js/set.js"></script>
+  </body>
+</html>
