@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hura - Login & Sign Up</title>
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="../../css/auth.css" />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/f418c1c995.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Favicon Links -->
+    <link rel="icon" href="../../../public/Favicon.png" type="image/png" />
+    <link rel="icon" href="../../../public/Favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="main-navbar">
+      <div class="navbar-container">
+        <a href="#" class="navbar-logo">
+          <img
+            src="../../../public/images/logo.png"
+            alt="Hura Logo"
+            height="40"
+          />
+        </a>
+        <nav class="navbar-links">
+          <a href="../../../../index.html">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="auth-main">
+      <div class="auth-container">
+        <div class="auth-tabs">
+          <button class="tab-btn active" id="signupTab">Sign Up</button>
+          <button class="tab-btn" id="loginTab">Log In</button>
+        </div>
+        <div class="auth-forms">
+          <!-- Sign Up Form -->
+          <form id="signupForm" class="auth-form">
+            <h2 class="form-title">Hura – Your AI Travel Companion</h2>
+            <p class="form-subtitle">
+              Explore Rwanda with ease. Sign up to unlock personalized travel
+              help.
+            </p>
+            <div class="form-group">
+              <label for="signupFullName">Full Name</label>
+              <input
+                type="text"
+                id="signupFullName"
+                name="signupFullName"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="signupEmail">Email Address</label>
+              <input
+                type="email"
+                id="signupEmail"
+                name="signupEmail"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="signupPassword">Password</label>
+              <div class="password-wrapper">
+                <input
+                  type="password"
+                  id="signupPassword"
+                  name="signupPassword"
+                  placeholder="Enter your password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="toggle-password"
+                  tabindex="-1"
+                  aria-label="Show password"
+                >
+                  <svg
+                    class="eye-icon eye-on"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#667eea"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <svg
+                    class="eye-icon eye-off"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#667eea"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="display: none"
+                  >
+                    <path
+                      d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a21.77 21.77 0 0 1 5.06-6.06M1 1l22 22"
+                    ></path>
+                    <path
+                      d="M9.53 9.53A3.5 3.5 0 0 0 12 15.5c1.38 0 2.63-.83 3.16-2.03"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="signupConfirmPassword">Confirm Password</label>
+              <div class="password-wrapper">
+                <input
+                  type="password"
+                  id="signupConfirmPassword"
+                  name="signupConfirmPassword"
+                  placeholder="Confirm your password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="toggle-password"
+                  tabindex="-1"
+                  aria-label="Show password"
+                >
+                  <svg
+                    class="eye-icon eye-on"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#667eea"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <svg
+                    class="eye-icon eye-off"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#667eea"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="display: none"
+                  >
+                    <path
+                      d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a21.77 21.77 0 0 1 5.06-6.06M1 1l22 22"
+                    ></path>
+                    <path
+                      d="M9.53 9.53A3.5 3.5 0 0 0 12 15.5c1.38 0 2.63-.83 3.16-2.03"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="form-group checkbox-group">
+              <input type="checkbox" id="signupTerms" required />
+              <label for="signupTerms"
+                >I agree to the
+                <a href="#" class="terms-link">terms & privacy policy</a></label
+              >
+            </div>
+            <button type="submit" class="auth-btn primary-btn">Sign Up</button>
+            <div class="divider"><span>or</span></div>
+            <button type="button" class="auth-btn google-btn">
+              <img
+                src="../../../public/images/icons/google_icon.png"
+                alt="google"
+              />Continue with Google
+            </button>
+            <p class="switch-form-text">
+              Already have an account? <a href="#" id="switchToLogin">Log in</a>
+            </p>
+          </form>
+          <!-- Log In Form -->
+          <form id="loginForm" class="auth-form" style="display: none">
+            <h2 class="form-title">Welcome Back!</h2>
+            <p class="form-subtitle">
+              Log in to continue your journey with Hura.
+            </p>
+            <div class="form-group">
+              <label for="loginEmail">Email Address</label>
+              <input
+                type="email"
+                id="loginEmail"
+                name="loginEmail"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <div class="password-wrapper">
+                <input
+                  type="password"
+                  id="loginPassword"
+                  name="loginPassword"
+                  placeholder="Enter your password"
+                  required
+                />
+                <button
+                  type="button"
+                  class="toggle-password"
+                  tabindex="-1"
+                  aria-label="Show password"
+                >
+                  <svg
+                    class="eye-icon eye-on"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#667eea"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <svg
+                    class="eye-icon eye-off"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#667eea"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="display: none"
+                  >
+                    <path
+                      d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a21.77 21.77 0 0 1 5.06-6.06M1 1l22 22"
+                    ></path>
+                    <path
+                      d="M9.53 9.53A3.5 3.5 0 0 0 12 15.5c1.38 0 2.63-.83 3.16-2.03"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <button type="submit" class="auth-btn primary-btn">
+              <a href="../dashboard.html">Log In</a>
+            </button>
+            <div class="divider"><span>or</span></div>
+            <button type="button" class="auth-btn google-btn">
+              <img
+                src="../../../public/images/icons/google_icon.png"
+                alt="google"
+              />Continue with Google
+            </button>
+            <p class="switch-form-text">
+              Don't have an account? <a href="#" id="switchToSignup">Sign up</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script src="../../js/auth/signup.js"></script>
+  </body>
+</html>

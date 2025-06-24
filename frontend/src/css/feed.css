@@ -280,17 +280,27 @@ a {
   .container {
     flex-direction: column;
   }
+
+  .main-header {
+    display: none;
+    margin-left: 5rem;
+    position: relative;
+  }
+
   .sidebar {
     width: 100%;
     padding: 1rem 0;
     position: relative;
   }
+
   .sidebar-header {
     padding: 0 2rem 1rem;
   }
+
   .hamburger-menu {
     display: block;
   }
+
   .nav-menu {
     display: none;
     position: absolute;
@@ -303,9 +313,11 @@ a {
     z-index: 1000;
     padding: 1rem 0;
   }
+
   .nav-menu.show {
     display: block;
   }
+
   .nav-item {
     min-width: fit-content;
     margin: 0 1rem 0.5rem;
@@ -317,9 +329,11 @@ a {
   html {
     font-size: 58%;
   }
+
   .main-content {
     padding: 2rem;
   }
+
   .main-header {
     flex-direction: column;
     align-items: flex-start;
@@ -331,12 +345,15 @@ a {
   html {
     font-size: 55%;
   }
+
   .sidebar-header {
     padding: 0 1.5rem 1rem;
   }
+
   .nav-menu {
     padding: 0.5rem 0;
   }
+
   .nav-item {
     margin: 0 1rem 0.3rem;
     padding: 1.2rem 1.5rem;

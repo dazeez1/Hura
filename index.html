@@ -3,15 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./frontend/src/css/main.css" />
     <title>Hura</title>
+    <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/f418c1c995.js"
       crossorigin="anonymous"
     ></script>
+    <!-- Fonts Style -->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
     </style>
+    <!-- Favicon Links -->
+    <link rel="icon" href="./frontend/public/Favicon.png" type="image/png" />
+    <link rel="icon" href="./frontend/public/Favicon.ico" type="image/x-icon" />
+    <!-- Css Styling -->
+    <link rel="stylesheet" href="./frontend/src/css/main.css" />
   </head>
   <body>
       <!-- Navigation -->
@@ -26,10 +32,10 @@
         /></a>
 
           <ul class="nav-menu">
-            <li><a href="#" class="nav-link">About</a></li>
-            <li><a href="#" class="nav-link">Contact</a></li>
-            <li><a href="#" class="btn btn-primary">Sign Up</a></li>
-            <li><a href="./frontend/src/html/dashboard.html" class="btn btn-outline">Login</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="./frontend/src/html/auth/signup.html" class="btn btn-primary">Sign Up</a></li>
+            <li><a href="./frontend/src/html/auth/signup.html" class="btn btn-outline">Login</a></li>
           </ul>
 
           <button class="hamburger" onclick="toggleMenu()">☰</button>
@@ -54,7 +60,7 @@
       </section>
 
       <!-- Features Section -->
-      <section class="features">
+      <section class="features" id="about">
         <div class="features-container">
           <h2>How Hura Helps</h2>
           <h3 class="features-subtitle">Your AI Travel Companion</h3>
@@ -102,7 +108,7 @@
       </section>
 
       <!-- Footer -->
-      <footer class="footer">
+      <footer class="footer" id="contact">
         <div class="footer-container">
             <div class="footer-section">
                 <h2><a href="#">About</a></h2>

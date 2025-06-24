@@ -1,0 +1,330 @@
+/* == Universal == */
+* {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  color: #0f1417;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #fff;
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* == Universal Ends == */
+
+/* == Navbar Section == */
+.main-navbar {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e9ecef;
+  padding: 1.5rem 0;
+}
+
+.navbar-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.navbar-title {
+  color: #667eea;
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.navbar-links a {
+  font-size: 1.6rem;
+  color: #495057;
+  font-weight: 500;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.navbar-links a:hover,
+.navbar-login-btn {
+  background: #f8f9fa;
+  color: #667eea;
+}
+
+.navbar-login-btn {
+  border: 1px solid #e9ecef;
+  font-weight: 600;
+}
+/* == Navbar Section Ends == */
+
+/* == Auth Main == */
+.auth-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 3rem 1rem;
+}
+
+.auth-container {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.08);
+  padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+  max-width: 40rem;
+  width: 100%;
+}
+/* == Auth Main Ends == */
+
+/* == Tabs Section == */
+.auth-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 1.2rem 0;
+  font-size: 1.7rem;
+  font-weight: 600;
+  background: #f8f9fa;
+  border: none;
+  border-radius: 1rem 1rem 0 0;
+  color: #495057;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+}
+/* == Tabs Section Ends == */
+
+/* == Forms Section == */
+.auth-forms {
+  width: 100%;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  color: #121417;
+  text-align: center;
+}
+
+.form-subtitle {
+  font-size: 1.3rem;
+  color: #495057;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  padding: 1.2rem 1.2rem;
+  border: 1px solid #e9ecef;
+  border-radius: 0.7rem;
+  font-size: 1.5rem;
+  background: #f8f9fa;
+  transition: border 0.2s;
+}
+
+.form-group input:focus {
+  border: 1.5px solid #667eea;
+  outline: none;
+}
+
+.checkbox-group {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.3rem;
+}
+
+.terms-link {
+  color: #667eea;
+  text-decoration: underline;
+}
+/* == Forms Section Ends == */
+
+/* == Buttons == */
+.auth-btn {
+  width: 100%;
+  padding: 1.3rem 0;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  margin-bottom: 0.5rem;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  box-shadow: 0 0.5rem 1.5rem rgba(102, 126, 234, 0.08);
+}
+
+.primary-btn:hover {
+  background: linear-gradient(135deg, #764ba2, #667eea);
+}
+
+.google-btn {
+  background: #f8f9fa;
+  color: #0f1417;
+  border: 1px solid #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-weight: 600;
+}
+
+.google-btn:hover {
+  background: #e9ecef;
+}
+
+.google-btn img {
+  width: 3rem;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.2rem 0 1.2rem 0;
+}
+
+.divider span {
+  background: #fff;
+  color: #b0b0b0;
+  font-size: 1.3rem;
+  padding: 0 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.divider:before,
+.divider:after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e9ecef;
+  margin: 0 0.5rem;
+}
+
+.switch-form-text {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #495057;
+}
+
+.switch-form-text a {
+  color: #667eea;
+  font-weight: 600;
+  text-decoration: underline;
+}
+/* == Buttons Ends == */
+
+/* == Responsive == */
+@media (max-width: 600px) {
+  .auth-container {
+    padding: 2rem 0.7rem;
+    max-width: 100%;
+  }
+  .navbar-container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.password-wrapper input[type="password"],
+.password-wrapper input[type="text"] {
+  flex: 1;
+}
+.toggle-password {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 2.2rem;
+}
+.eye-icon {
+  pointer-events: none;
+}
+
+.navbar-login-btn.active,
+.navbar-signup-btn.active {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff !important;
+}
