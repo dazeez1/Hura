@@ -53,3 +53,187 @@ document.querySelectorAll(".toggle-password").forEach((btn) => {
     }
   });
 });
+
+// Utility to show messages in the UI
+function showMessage(element, message, type = "") {
+  element.textContent = message;
+  element.className = "form-message" + (type ? " " + type : "");
+}
+
+// Signup form submission logic
+if (signupForm) {
+  const signupMessage = document.createElement("div");
+  signupMessage.className = "form-message";
+  signupForm.appendChild(signupMessage);
+  signupForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    // Collect form data
+    const fullName = document.getElementById("signupFullName").value.trim();
+    const email = document.getElementById("signupEmail").value.trim();
+    const password = document.getElementById("signupPassword").value;
+    const confirmPassword = document.getElementById(
+      "signupConfirmPassword"
+    ).value;
+    const role = "user";
+    // Basic client-side validation
+    if (!fullName || !email || !password || !confirmPassword) {
+      showMessage(signupMessage, "Please fill in all fields.", "error");
+      return;
+    }
+    if (password !== confirmPassword) {
+      showMessage(signupMessage, "Passwords do not match.", "error");
+      return;
+    }
+    try {
+      const response = await fetch("http://localhost:4000/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ fullName, email, password, role }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        showMessage(
+          signupMessage,
+          "Signup successful! You can now log in.",
+          "success"
+        );
+        showLogin();
+      } else {
+        showMessage(
+          signupMessage,
+          data.error || "Signup failed. Please try again.",
+          "error"
+        );
+      }
+    } catch (err) {
+      showMessage(
+        signupMessage,
+        "Network error. Please try again later.",
+        "error"
+      );
+    }
+  });
+}
+
+// Login form submission logic
+if (loginForm) {
+  const loginMessage = document.createElement("div");
+  loginMessage.className = "form-message";
+  loginForm.appendChild(loginMessage);
+  loginForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value;
+    if (!email || !password) {
+      showMessage(
+        loginMessage,
+        "Please enter your email and password.",
+        "error"
+      );
+      return;
+    }
+    try {
+      const response = await fetch("http://localhost:4000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        showMessage(
+          loginMessage,
+          "Login successful! Redirecting...",
+          "success"
+        );
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.user));
+        setTimeout(() => {
+          if (data.user.role === "admin") {
+            window.location.href = "../dashboard.html";
+          } else {
+            window.location.href = "../chatbot.html";
+          }
+        }, 1000);
+      } else {
+        showMessage(
+          loginMessage,
+          data.error || "Login failed. Please try again.",
+          "error"
+        );
+      }
+    } catch (err) {
+      showMessage(
+        loginMessage,
+        "Network error. Please try again later.",
+        "error"
+      );
+    }
+  });
+}
+
+// Forgot password modal logic
+const forgotPasswordLink = document.getElementById("forgotPasswordLink");
+const forgotPasswordModal = document.getElementById("forgotPasswordModal");
+const closeForgotPasswordModal = document.getElementById(
+  "closeForgotPasswordModal"
+);
+const forgotPasswordForm = document.getElementById("forgotPasswordForm");
+const forgotPasswordMessage = document.getElementById("forgotPasswordMessage");
+
+if (forgotPasswordLink && forgotPasswordModal && closeForgotPasswordModal) {
+  forgotPasswordLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    forgotPasswordModal.style.display = "block";
+    forgotPasswordMessage.textContent = "";
+    forgotPasswordForm.reset();
+  });
+  closeForgotPasswordModal.addEventListener("click", function () {
+    forgotPasswordModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === forgotPasswordModal) {
+      forgotPasswordModal.style.display = "none";
+    }
+  });
+}
+
+if (forgotPasswordForm) {
+  forgotPasswordForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const email = document.getElementById("forgotPasswordEmail").value.trim();
+    if (!email) {
+      showMessage(forgotPasswordMessage, "Please enter your email.", "error");
+      return;
+    }
+    try {
+      const response = await fetch(
+        "http://localhost:4000/api/auth/password-reset",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        }
+      );
+      const data = await response.json();
+      if (response.ok) {
+        showMessage(
+          forgotPasswordMessage,
+          data.message || "If that email exists, a reset link has been sent.",
+          "success"
+        );
+      } else {
+        showMessage(
+          forgotPasswordMessage,
+          data.error || "Failed to send reset link.",
+          "error"
+        );
+      }
+    } catch (err) {
+      showMessage(
+        forgotPasswordMessage,
+        "Network error. Please try again later.",
+        "error"
+      );
+    }
+  });
+}

@@ -189,12 +189,6 @@
             </div>
             <button type="submit" class="auth-btn primary-btn">Sign Up</button>
             <div class="divider"><span>or</span></div>
-            <button type="button" class="auth-btn google-btn">
-              <img
-                src="../../../public/images/icons/google_icon.png"
-                alt="google"
-              />Continue with Google
-            </button>
             <p class="switch-form-text">
               Already have an account? <a href="#" id="switchToLogin">Log in</a>
             </p>
@@ -269,16 +263,15 @@
                 </button>
               </div>
             </div>
+            <div class="form-group">
+              <a href="#" id="forgotPasswordLink" class="forgot-password-link"
+                >Forgot password?</a
+              >
+            </div>
             <button type="submit" class="auth-btn primary-btn">
               <a href="../dashboard.html">Log In</a>
             </button>
             <div class="divider"><span>or</span></div>
-            <button type="button" class="auth-btn google-btn">
-              <img
-                src="../../../public/images/icons/google_icon.png"
-                alt="google"
-              />Continue with Google
-            </button>
             <p class="switch-form-text">
               Don't have an account? <a href="#" id="switchToSignup">Sign up</a>
             </p>
@@ -286,6 +279,29 @@
         </div>
       </div>
     </main>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" id="closeForgotPasswordModal">&times;</span>
+        <h2>Forgot Password</h2>
+        <form id="forgotPasswordForm">
+          <div class="form-group">
+            <label for="forgotPasswordEmail">Enter your email address</label>
+            <input
+              type="email"
+              id="forgotPasswordEmail"
+              name="forgotPasswordEmail"
+              required
+            />
+          </div>
+          <button type="submit" class="auth-btn primary-btn">
+            Send Reset Link
+          </button>
+          <div id="forgotPasswordMessage" class="form-message"></div>
+        </form>
+      </div>
+    </div>
 
     <script src="../../js/auth/signup.js"></script>
   </body>
