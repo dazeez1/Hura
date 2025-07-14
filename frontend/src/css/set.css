@@ -272,6 +272,11 @@ strong {
   color: #6c757d;
   font-size: 1.8rem;
 }
+
+.form-input[readonly] {
+  background-color: #f3f4f6;
+  color: #888;
+}
 /* == Form Fields Section Ends == */
 
 /* == Notifications Section == */
@@ -371,6 +376,87 @@ strong {
   transform: translateY(-0.1rem);
 }
 /* == Save Button Section Ends == */
+
+.logout-btn {
+  background: #e53935;
+  color: #fff;
+  border: none;
+  padding: 1.2rem 2.4rem;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-left: 2rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.logout-btn:hover {
+  background: #b71c1c;
+  transform: translateY(-2px) scale(1.03);
+}
+.logout-btn:active {
+  background: #c62828;
+}
+
+.remove-photo-btn {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 1.2rem 2.4rem;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.remove-photo-btn:hover {
+  background: #c82333;
+  transform: translateY(-2px) scale(1.03);
+}
+.remove-photo-btn:active {
+  background: #bd2130;
+}
+
+.form-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.save-btn,
+.logout-btn {
+  flex: 1 1 50%;
+  width: 50%;
+  min-width: 120px;
+  max-width: 100%;
+  height: 4.8rem;
+  font-size: 1.6rem;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+  .form-actions-row {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .save-btn,
+  .logout-btn {
+    width: 100%;
+    min-width: 0;
+    height: 4.4rem;
+    font-size: 1.5rem;
+  }
+}
 /* == Main Content Section Ends == */
 
 /* == Responsive Design Section == */

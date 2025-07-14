@@ -147,6 +147,12 @@ ul {
   font-weight: 700;
 }
 
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 .user-profile {
   display: flex;
   align-items: center;
@@ -168,6 +174,69 @@ ul {
   align-items: center;
   font-size: 1.8rem;
 }
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #6c757d;
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+}
+
+.logout-btn:hover {
+  color: #dc3545;
+  background: rgba(220, 53, 69, 0.1);
+}
+
+.refresh-btn {
+  background: none;
+  border: none;
+  color: #6c757d;
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.refresh-btn:hover {
+  color: #007bff;
+  background: rgba(0, 123, 255, 0.1);
+}
+
+.refresh-btn.spinning i {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.test-btn {
+  background: none;
+  border: none;
+  color: #6c757d;
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.test-btn:hover {
+  color: #28a745;
+  background: rgba(40, 167, 69, 0.1);
+}
+
 /* == Main Section Ends == */
 
 /* == Live Metrics Section == */
@@ -236,8 +305,8 @@ ul {
   border-radius: 1.2rem;
   border: 1px solid #e9e9f0;
   position: relative;
-  flex: 1 1 calc(50% - 1.25rem);
-  min-width: 35rem;
+  flex: 1 1 calc(33.333% - 1.67rem);
+  min-width: 30rem;
   height: 35rem;
   display: flex;
   flex-direction: column;

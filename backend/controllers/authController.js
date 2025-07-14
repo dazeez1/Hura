@@ -71,8 +71,18 @@ exports.login = async (req, res) => {
     if (!isMatch) {
       return res.status(401).json({ error: "Invalid credentials." });
     }
-    // Generate JWT
-    const token = generateToken(user);
+
+    // Create login session
+    const userAgent = req.headers["user-agent"] || "Unknown";
+    const ipAddress = req.ip || req.connection.remoteAddress;
+    const sessionId = crypto.randomBytes(16).toString("hex");
+
+    // Generate JWT token
+    const token = jwt.sign(
+      { id: user._id, email: user.email, role: user.role },
+      process.env.JWT_SECRET,
+      { expiresIn: "7d" }
+    );
     res.status(200).json({
       message: "Login successful.",
       user: {
@@ -82,6 +92,7 @@ exports.login = async (req, res) => {
         role: user.role,
       },
       token,
+      sessionId,
     });
   } catch (err) {
     res.status(500).json({ error: "Server error", details: err.message });

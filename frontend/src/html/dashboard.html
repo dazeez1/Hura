@@ -68,10 +68,12 @@
         <!-- Main Header -->
         <header class="main-header">
           <h1>Dashboard</h1>
-          <div class="user-profile">
-            <span>Mariam Azeez</span>
-            <div class="user-avatar">
-              <i class="fas fa-user"></i>
+          <div class="header-controls">
+            <div class="user-profile">
+              <span id="adminName">Loading...</span>
+              <div class="user-avatar">
+                <i class="fas fa-user"></i>
+              </div>
             </div>
           </div>
         </header>
@@ -81,24 +83,20 @@
           <h2>Live Metrics</h2>
           <div class="metrics-grid">
             <div class="metric-card">
-              <p class="metric-title">Total Active Sessions</p>
-              <p class="metric-value" id="active-sessions">--</p>
-              <p class="metric-change positive" id="sessions-change">+0%</p>
+              <p class="metric-title">Total Active Users</p>
+              <p class="metric-value" id="total-users">--</p>
             </div>
             <div class="metric-card">
-              <p class="metric-title">Top User Intents</p>
-              <p class="metric-value" id="top-intent">--</p>
-              <p class="metric-change-placeholder"></p>
+              <p class="metric-title">Total Messages</p>
+              <p class="metric-value" id="total-messages">--</p>
             </div>
             <div class="metric-card">
-              <p class="metric-title">NLP Drift Alert</p>
-              <p class="metric-value" id="nlp-drift">--</p>
-              <p class="metric-change-placeholder"></p>
+              <p class="metric-title">User Messages</p>
+              <p class="metric-value" id="user-messages">--</p>
             </div>
             <div class="metric-card">
-              <p class="metric-title">Translation Accuracy</p>
-              <p class="metric-value" id="translation-accuracy">--</p>
-              <p class="metric-change negative" id="accuracy-change">-0%</p>
+              <p class="metric-title">Bot Messages</p>
+              <p class="metric-value" id="bot-messages">--</p>
             </div>
           </div>
         </section>
@@ -106,12 +104,16 @@
         <!-- Charts -->
         <section class="charts-section">
           <div class="chart-container">
-            <h3>Top User Intents</h3>
-            <canvas id="userIntentsChart"></canvas>
+            <h3>Total Messages</h3>
+            <canvas id="totalMessagesChart"></canvas>
           </div>
           <div class="chart-container">
-            <h3>Translation Accuracy</h3>
-            <canvas id="translationAccuracyChart"></canvas>
+            <h3>User Messages</h3>
+            <canvas id="userMessagesChart"></canvas>
+          </div>
+          <div class="chart-container">
+            <h3>Bot Messages</h3>
+            <canvas id="botMessagesChart"></canvas>
           </div>
         </section>
 

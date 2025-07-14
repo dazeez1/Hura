@@ -145,8 +145,13 @@ if (loginForm) {
           "Login successful! Redirecting...",
           "success"
         );
+        // Phone number and notifications are now stored separately and don't need merging
         localStorage.setItem("token", data.token);
         localStorage.setItem("user", JSON.stringify(data.user));
+        console.log(
+          "[DEBUG] New user in localStorage after login:",
+          JSON.parse(localStorage.getItem("user"))
+        );
         setTimeout(() => {
           if (data.user.role === "admin") {
             window.location.href = "../dashboard.html";

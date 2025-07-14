@@ -1,4 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Display admin name in feedback user-profile area
+  const adminNameFeedback = document.getElementById("adminNameFeedback");
+  const user = JSON.parse(localStorage.getItem("user") || "null");
+  if (adminNameFeedback && user && user.fullName) {
+    adminNameFeedback.textContent = user.fullName;
+  }
+
+  // Display admin profile picture in feedback page
+  const userAvatar = document.querySelector(".user-avatar");
+
+  // Load profile picture from MongoDB
+  async function loadProfilePicture() {
+    try {
+      const token = localStorage.getItem("token");
+      const response = await fetch("http://localhost:4000/api/admin/profile", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const profilePicture = data.data.settings.profilePicture;
+
+        if (userAvatar && profilePicture) {
+          userAvatar.style.backgroundImage = `url(${profilePicture})`;
+          userAvatar.style.backgroundSize = "cover";
+          userAvatar.style.backgroundPosition = "center";
+          userAvatar.innerHTML = ""; // Remove the default icon
+        }
+      }
+    } catch (error) {
+      console.error("Error loading profile picture:", error);
+    }
+  }
+
+  // Load profile picture
+  loadProfilePicture();
   // --- Sidebar/Hamburger Menu Logic (from dashboard) ---
   const hamburgerMenu = document.getElementById("hamburgerMenu");
   const navMenu = document.getElementById("navMenu");
@@ -28,64 +67,58 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Feedback Data (for demonstration, replace with real API call) ---
-  const data = {
-    flagged: [
-      {
-        userid: "12345",
-        chatbot: "HuraBot",
-        date: "2024-07-20",
-        reason: "Negative sentiment detected",
-        action: "Review",
-      },
-      {
-        userid: "23456",
-        chatbot: "HuraBot",
-        date: "2024-07-19",
-        reason: "Urgent language used",
-        action: "Resolve",
-      },
-    ],
-    recent: [
-      {
-        userid: "12345",
-        chatbot: "HuraBot",
-        date: "2024-07-20",
-        reason: "Negative sentiment detected",
-        action: "Review",
-      },
-      {
-        userid: "23456",
-        chatbot: "HuraBot",
-        date: "2024-07-19",
-        reason: "Urgent language used",
-        action: "Resolve",
-      },
-      {
-        userid: "34567",
-        chatbot: "HuraBot",
-        date: "2024-07-18",
-        reason: "Feature request",
-        action: "Review",
-      },
-    ],
-  };
-  updateUI(data);
+  // --- Fetch real feedback data from backend ---
+  async function fetchFeedback() {
+    const token = localStorage.getItem("token");
+    try {
+      const res = await fetch("http://localhost:4000/api/chat/feedback", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const result = await res.json();
+      if (result.success && Array.isArray(result.data)) {
+        updateUI(result.data);
+      } else {
+        updateUI([]);
+      }
+    } catch (err) {
+      updateUI([]);
+    }
+  }
+  fetchFeedback();
 
-  function updateUI(data) {
+  function updateUI(feedbackList) {
+    // Separate flagged and recent feedback
+    const flagged = feedbackList.filter(
+      (fb) => fb.reason === "Negative sentiment" || fb.status === "new"
+    );
+    const recent = feedbackList;
+
     // Populate Flagged for Review
     const flaggedList = document.getElementById("flagged-list");
     flaggedList.innerHTML = "";
-    if (data.flagged.length > 0) {
-      data.flagged.forEach((item) => {
+    if (flagged.length > 0) {
+      flagged.forEach((item) => {
         const div = document.createElement("div");
         div.className = "flagged-item";
         div.innerHTML = `
-            <div class="flagged-row"><span class="flagged-label">User ID:</span> <span class="flagged-value">${item.userid}</span></div>
-            <div class="flagged-row"><span class="flagged-label">Chatbot:</span> <span class="flagged-value">${item.chatbot}</span></div>
-            <div class="flagged-row"><span class="flagged-label">Date:</span> <span class="flagged-value">${item.date}</span></div>
-            <div class="flagged-row"><span class="flagged-label">Reason:</span> <span class="flagged-value">${item.reason}</span></div>
-            <div class="flagged-row"><span class="flagged-label">Action:</span> <span class="flagged-value">${item.action}</span></div>
+            <div class="flagged-row"><span class="flagged-label">User:</span> <span class="flagged-value">${
+              item.userId ? item.userId.fullName : "Anonymous"
+            }</span></div>
+            <div class="flagged-row"><span class="flagged-label">Session:</span> <span class="flagged-value">${
+              item.sessionId || "-"
+            }</span></div>
+            <div class="flagged-row"><span class="flagged-label">Date:</span> <span class="flagged-value">${new Date(
+              item.date
+            ).toLocaleString()}</span></div>
+            <div class="flagged-row"><span class="flagged-label">Reason:</span> <span class="flagged-value">${
+              item.reason
+            }</span></div>
+            <div class="flagged-row"><span class="flagged-label">Comment:</span> <span class="flagged-value">${
+              item.comment || "-"
+            }</span></div>
+            <div class="flagged-row"><span class="flagged-label">Status:</span> <span class="flagged-value">${
+              item.status
+            }</span></div>
           `;
         flaggedList.appendChild(div);
       });
@@ -97,14 +130,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // Populate Recent Feedback Table
     const feedbackTbody = document.getElementById("feedback-tbody");
     feedbackTbody.innerHTML = "";
-    data.recent.forEach((item) => {
+    recent.forEach((item) => {
       const tr = document.createElement("tr");
       tr.innerHTML = `
-          <td>${item.userid}</td>
-          <td>${item.chatbot}</td>
-          <td>${item.date}</td>
+          <td>${item.userId ? item.userId.fullName : "Anonymous"}</td>
+          <td>${item.sessionId || "-"}</td>
+          <td>${new Date(item.date).toLocaleString()}</td>
           <td>${item.reason}</td>
-          <td class="action">${item.action}</td>
+          <td>${item.comment || "-"}</td>
+          <td class="status ${item.status}">${item.status}</td>
         `;
       feedbackTbody.appendChild(tr);
     });

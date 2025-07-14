@@ -106,6 +106,110 @@ body.show-chatbot .chatbot-popup {
   letter-spacing: 0.02rem;
 }
 
+.header-actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#info-chatbot {
+  font-size: 1.3rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+#info-chatbot:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.info-popover {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  z-index: 1000;
+  min-width: 180px;
+  margin-top: 8px;
+}
+
+.info-popover::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: 20px;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.info-popover.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.popover-content {
+  padding: 8px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  color: #333;
+}
+
+.action-btn:hover {
+  background: #f5f5f5;
+  transform: translateX(2px);
+}
+
+.action-btn .material-symbols-rounded {
+  font-size: 1.2rem;
+}
+
+.clear-btn {
+  color: #136873;
+}
+
+.clear-btn:hover {
+  background: #e8f4f4;
+}
+
+.logout-btn {
+  color: #dc3545;
+}
+
+.logout-btn:hover {
+  background: #fde8e8;
+}
+
 .chat-header #close-chatbot {
   border: none;
   color: #fff;
@@ -360,6 +464,113 @@ em-emoji-picker {
 
 body.show-emoji-picker em-emoji-picker {
   visibility: visible;
+}
+
+/* Feedback Modal Styles */
+.feedback-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.feedback-modal-content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 370px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(19, 104, 115, 0.08);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.feedback-modal-content h3 {
+  text-align: center;
+  color: #136873;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+.feedback-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.feedback-modal-close:hover {
+  color: #136873;
+}
+#feedbackForm label {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #222;
+  font-weight: 500;
+}
+#feedbackForm select,
+#feedbackForm textarea {
+  margin-top: 0.3rem;
+  margin-bottom: 1.1rem;
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  font-size: 1.05rem;
+  background: #f8f8f8;
+  resize: none;
+  transition: border 0.2s;
+}
+#feedbackForm select:focus,
+#feedbackForm textarea:focus {
+  border: 1.5px solid #136873;
+  outline: none;
+}
+.feedback-submit-btn {
+  background: linear-gradient(90deg, #136873 0%, #17cf61 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-top: 0.7rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(19, 104, 115, 0.08);
+  letter-spacing: 0.02em;
+  transition: background 0.2s, transform 0.1s;
+}
+.feedback-submit-btn:hover {
+  background: linear-gradient(90deg, #0e4e5a 0%, #059669 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+.feedback-thankyou {
+  text-align: center;
+  color: #136873;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-top: 2.2rem;
+  padding: 1.2rem 0 0.5rem 0;
+  border-radius: 8px;
+  background: #f0fdf4;
+  box-shadow: 0 1px 4px rgba(16, 185, 129, 0.07);
+}
+
+.system-message {
+  background: #f5f7fa;
+  font-style: italic;
+  border-left: 3px solid #136873;
+  opacity: 0.95;
 }
 
 /* Responsive media query for mobile screens */
