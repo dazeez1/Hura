@@ -1,4 +1,3 @@
-const cors = require("cors");
 const dotenv = require("dotenv");
 // Load environment variables
 dotenv.config();
@@ -14,6 +13,7 @@ require("./config/db");
 const app = express();
 
 // CORS middleware should be first
+const cors = require("cors");
 app.use(
   cors({
     origin: [
