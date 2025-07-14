@@ -86,7 +86,7 @@ if (signupForm) {
     }
     try {
       const response = await fetch(
-        "https://hura-iz3f-2gvekm9s2-damis-projects-8bd6b2ff.vercel.app/api/auth/signup",
+        "https://hura-backend-nebmri1u6-damis-projects-8bd6b2ff.vercel.app/api/auth/signup",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -137,7 +137,7 @@ if (loginForm) {
     }
     try {
       const response = await fetch(
-        "https://hura-iz3f-2gvekm9s2-damis-projects-8bd6b2ff.vercel.app/api/auth/login",
+        "https://hura-backend-nebmri1u6-damis-projects-8bd6b2ff.vercel.app/api/auth/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -218,7 +218,7 @@ if (forgotPasswordForm) {
     }
     try {
       const response = await fetch(
-        "https://hura-iz3f-2gvekm9s2-damis-projects-8bd6b2ff.vercel.app/api/auth/password-reset",
+        "https://hura-backend-nebmri1u6-damis-projects-8bd6b2ff.vercel.app/api/auth/password-reset",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

@@ -23,7 +23,7 @@ async function loadUserProfile() {
   try {
     const token = getAuthToken();
     const response = await fetch(
-      `https://hura-iz3f-2gvekm9s2-damis-projects-8bd6b2ff.vercel.app/admin/profile`,
+      `https://hura-backend-nebmri1u6-damis-projects-8bd6b2ff.vercel.app/admin/profile`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -99,7 +99,7 @@ async function saveProfileData(formData) {
   try {
     const token = getAuthToken();
     const response = await fetch(
-      `https://hura-iz3f-2gvekm9s2-damis-projects-8bd6b2ff.vercel.app/admin/profile`,
+      `https://hura-backend-nebmri1u6-damis-projects-8bd6b2ff.vercel.app/admin/profile`,
       {
         method: "PUT",
         headers: {
@@ -144,7 +144,7 @@ async function uploadProfilePicture(file) {
         try {
           const token = getAuthToken();
           const response = await fetch(
-            `https://hura-iz3f-2gvekm9s2-damis-projects-8bd6b2ff.vercel.app/admin/profile-picture`,
+            `https://hura-backend-nebmri1u6-damis-projects-8bd6b2ff.vercel.app/admin/profile-picture`,
             {
               method: "POST",
               headers: {
@@ -194,7 +194,7 @@ async function removeProfilePicture() {
   try {
     const token = getAuthToken();
     const response = await fetch(
-      `https://hura-iz3f-2gvekm9s2-damis-projects-8bd6b2ff.vercel.app/admin/profile-picture`,
+      `https://hura-backend-nebmri1u6-damis-projects-8bd6b2ff.vercel.app/admin/profile-picture`,
       {
         method: "DELETE",
         headers: {

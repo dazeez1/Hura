@@ -16,7 +16,7 @@ const app = express();
 // CORS middleware should be first
 app.use(
   cors({
-    origin: "https://huraaichat.com",
+    origin: "https://www.huraaichat.com",
     credentials: true,
   })
 );
