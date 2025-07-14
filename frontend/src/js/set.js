@@ -1,5 +1,5 @@
 // API Base URL
-const API_BASE_URL = "http://localhost:4000/api";
+const API_BASE_URL = "hura-28tbty1lv-damis-projects-8bd6b2ff.vercel.app/api";
 
 // Get authentication token
 function getAuthToken() {

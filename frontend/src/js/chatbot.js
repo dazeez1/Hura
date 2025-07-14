@@ -802,7 +802,7 @@ if (feedbackForm) {
       return;
     }
     try {
-      const response = await fetch("http://localhost:4000/api/chat/feedback", {
+      const response = await fetch("hura-28tbty1lv-damis-projects-8bd6b2ff.vercel.app/api/chat/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
