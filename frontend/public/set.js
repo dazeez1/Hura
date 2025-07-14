@@ -1,5 +1,5 @@
 // API Base URL
-const API_BASE_URL = "hura-28tbty1lv-damis-projects-8bd6b2ff.vercel.app/api";
+const API_BASE_URL = "https://hura-q92y.onrender.com/api";
 
 // Get authentication token
 function getAuthToken() {
@@ -22,15 +22,12 @@ function checkAuth() {
 async function loadUserProfile() {
   try {
     const token = getAuthToken();
-    const response = await fetch(
-      `https://hura-q92y.onrender.com/admin/profile`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch(`${API_BASE_URL}/admin/profile`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
 
     if (response.ok) {
       const data = await response.json();
@@ -98,17 +95,14 @@ function updateProfilePictureDisplay(profilePicture) {
 async function saveProfileData(formData) {
   try {
     const token = getAuthToken();
-    const response = await fetch(
-      `https://hura-q92y.onrender.com/admin/profile`,
-      {
-        method: "PUT",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      }
-    );
+    const response = await fetch(`${API_BASE_URL}/admin/profile`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
     if (response.ok) {
       const data = await response.json();
@@ -144,7 +138,7 @@ async function uploadProfilePicture(file) {
         try {
           const token = getAuthToken();
           const response = await fetch(
-            `https://hura-q92y.onrender.com/admin/profile-picture`,
+            `${API_BASE_URL}/admin/profile-picture`,
             {
               method: "POST",
               headers: {
@@ -193,16 +187,13 @@ async function uploadProfilePicture(file) {
 async function removeProfilePicture() {
   try {
     const token = getAuthToken();
-    const response = await fetch(
-      `https://hura-q92y.onrender.com/admin/profile-picture`,
-      {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch(`${API_BASE_URL}/admin/profile-picture`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
 
     if (response.ok) {
       updateProfilePictureDisplay(null);

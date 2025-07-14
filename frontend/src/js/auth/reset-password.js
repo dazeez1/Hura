@@ -35,7 +35,7 @@ if (resetPasswordForm) {
     }
     try {
       const response = await fetch(
-        `hura-28tbty1lv-damis-projects-8bd6b2ff.vercel.app/api/auth/password-reset/${token}`,
+        `https://hura-q92y.onrender.com/api/auth/password-reset/${token}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

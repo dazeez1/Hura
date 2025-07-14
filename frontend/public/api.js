@@ -10,7 +10,8 @@ class HuraAPI {
       maps: `${this.baseURL}/maps`,
       weather: `${this.baseURL}/weather`,
     };
-    this.endpoints.chatHistory = "hura-28tbty1lv-damis-projects-8bd6b2ff.vercel.app/api/chat/history";
+    this.endpoints.chatHistory =
+      "https://hura-q92y.onrender.com/api/chat/history";
   }
 
   // Generic API request method
@@ -47,7 +48,7 @@ class HuraAPI {
 
   // Ask question to chatbot (Q&A) via backend proxy for metrics
   async askQuestion(text, sessionId = null, userId = null) {
-    const endpoint = "hura-28tbty1lv-damis-projects-8bd6b2ff.vercel.app/api/chat/ask";
+    const endpoint = "https://hura-q92y.onrender.com/api/chat/ask";
     const body = { text };
     if (sessionId) body.sessionId = sessionId;
     if (userId) body.userId = userId;
@@ -106,7 +107,7 @@ class HuraAPI {
 
   // Start a chat session for metrics
   async startSession(userId = null, sessionType = "chatbot") {
-    const endpoint = "hura-28tbty1lv-damis-projects-8bd6b2ff.vercel.app/api/chat/session/start";
+    const endpoint = "https://hura-q92y.onrender.com/api/chat/session/start";
     const body = { userId, sessionType };
     return this.makeRequest(endpoint, "POST", body);
   }
@@ -120,7 +121,7 @@ class HuraAPI {
     hasFile = false,
     fileType = null
   ) {
-    const endpoint = `hura-28tbty1lv-damis-projects-8bd6b2ff.vercel.app/api/chat/session/${sessionId}/message`;
+    const endpoint = `https://hura-q92y.onrender.com/api/chat/session/${sessionId}/message`;
     const body = { role, content };
     if (responseTime !== null) body.responseTime = responseTime;
     if (hasFile) body.hasFile = true;
@@ -130,7 +131,7 @@ class HuraAPI {
 
   // End a chat session for metrics
   async endSession(sessionId) {
-    const endpoint = `hura-28tbty1lv-damis-projects-8bd6b2ff.vercel.app/api/chat/session/${sessionId}/end`;
+    const endpoint = `https://hura-q92y.onrender.com/api/chat/session/${sessionId}/end`;
     return this.makeRequest(endpoint, "POST");
   }
 

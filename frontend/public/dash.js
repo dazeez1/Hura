@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // API Base URL
-  const API_BASE_URL = "hura-28tbty1lv-damis-projects-8bd6b2ff.vercel.app/api";
+  const API_BASE_URL = "https://hura-q92y.onrender.com/api";
 
   // Display admin name
   const adminNameElement = document.getElementById("adminName");
