@@ -22,7 +22,7 @@ function checkAuth() {
 async function loadUserProfile() {
   try {
     const token = getAuthToken();
-    const response = await fetch(`${API_BASE_URL}/admin/profile`, {
+    const response = await fetch(`https://huraaichat.com/admin/profile`, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -95,7 +95,7 @@ function updateProfilePictureDisplay(profilePicture) {
 async function saveProfileData(formData) {
   try {
     const token = getAuthToken();
-    const response = await fetch(`${API_BASE_URL}/admin/profile`, {
+    const response = await fetch(`https://huraaichat.com/admin/profile`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -138,7 +138,7 @@ async function uploadProfilePicture(file) {
         try {
           const token = getAuthToken();
           const response = await fetch(
-            `${API_BASE_URL}/admin/profile-picture`,
+            `https://huraaichat.com/admin/profile-picture`,
             {
               method: "POST",
               headers: {
@@ -187,13 +187,16 @@ async function uploadProfilePicture(file) {
 async function removeProfilePicture() {
   try {
     const token = getAuthToken();
-    const response = await fetch(`${API_BASE_URL}/admin/profile-picture`, {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      `https://huraaichat.com/admin/profile-picture`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     if (response.ok) {
       updateProfilePictureDisplay(null);

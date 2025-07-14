@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Load profile picture from MongoDB
   async function loadProfilePicture() {
     try {
-      const response = await fetch(`${API_BASE_URL}/admin/profile`, {
+      const response = await fetch(`https://huraaichat.com/admin/profile`, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -578,12 +578,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Activity Feed ---
   const fetchActivityFeed = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/chat/activity?limit=10`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `https://huraaichat.com/chat/activity?limit=10`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to fetch activity feed");

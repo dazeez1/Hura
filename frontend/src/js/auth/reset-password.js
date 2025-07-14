@@ -49,8 +49,6 @@ if (resetPasswordForm) {
           "success"
         );
         resetPasswordForm.style.display = "none";
-        // Optionally, redirect after a delay:
-        // setTimeout(() => { window.location.href = 'signup.html'; }, 2000);
       } else {
         showResetMessage(
           data.error || "Password reset failed. Please try again.",

@@ -85,7 +85,7 @@ if (signupForm) {
       return;
     }
     try {
-      const response = await fetch("hura-28tbty1lv-damis-projects-8bd6b2ff.vercel.app/api/auth/signup", {
+      const response = await fetch("https://huraaichat.com/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ fullName, email, password, role }),
@@ -133,7 +133,7 @@ if (loginForm) {
       return;
     }
     try {
-      const response = await fetch("hura-28tbty1lv-damis-projects-8bd6b2ff.vercel.app/api/auth/login", {
+      const response = await fetch("https://huraaichat.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -212,7 +212,7 @@ if (forgotPasswordForm) {
     }
     try {
       const response = await fetch(
-        "hura-28tbty1lv-damis-projects-8bd6b2ff.vercel.app/api/auth/password-reset",
+        "https://huraaichat.com/api/auth/password-reset",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

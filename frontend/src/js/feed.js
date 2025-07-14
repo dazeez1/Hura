@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function loadProfilePicture() {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("hura-28tbty1lv-damis-projects-8bd6b2ff.vercel.app/api/admin/profile", {
+      const response = await fetch("https://huraaichat.com/api/admin/profile", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function fetchFeedback() {
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch("hura-28tbty1lv-damis-projects-8bd6b2ff.vercel.app/api/chat/feedback", {
+      const res = await fetch("https://huraaichat.com/api/chat/feedback", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const result = await res.json();
