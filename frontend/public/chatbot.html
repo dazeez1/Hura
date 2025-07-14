@@ -1,1 +1,171 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hura - Chatbot</title>
+    <!-- Linking Google fonts for icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
+    <!-- Css Styling -->
+    <link rel="stylesheet" href="./chatbot.css" />
+    <!-- Favicon Links -->
+    <link rel="icon" href="./Favicon.png" type="image/png" />
+    <link rel="icon" href="./Favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Chatbot Toggler -->
+    <button id="chatbot-toggler">
+      <span class="material-symbols-rounded">mode_comment</span>
+      <span class="material-symbols-rounded">close</span>
+    </button>
+
+    <div class="chatbot-popup">
+      <!-- Chatbot Header -->
+      <div class="chat-header">
+        <div class="header-info">
+          <img src="../public/Favicon.png" class="chatbot-logo" alt="logo" />
+          <h2 class="logo-text">Hura</h2>
+        </div>
+        <div class="header-actions">
+          <button id="info-chatbot" class="material-symbols-rounded">
+            info
+          </button>
+          <div id="info-popover" class="info-popover">
+            <div class="popover-content">
+              <button id="clear-chat-btn" class="action-btn clear-btn">
+                <span class="material-symbols-rounded">clear_all</span>
+                Clear Chat
+              </button>
+              <button id="logout-btn" class="action-btn logout-btn">
+                <span class="material-symbols-rounded">logout</span>
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+        <button id="close-chatbot" class="material-symbols-rounded">
+          keyboard_arrow_down
+        </button>
+      </div>
+
+      <!-- Chatbot Body -->
+      <div class="chat-body">
+        <div class="message bot-message">
+          <img src="../public/Favicon.png" class="bot-avatar" alt="logo" />
+          <!-- prettier-ignore -->
+          <div class="message-text">
+            🌍 <b>Welcome to Hura Tourism Chatbot!</b><br><br>
+            I'm your AI assistant for exploring Kigali, Rwanda. I can help you with:
+            <ul style="margin: 0.5em 0 0.5em 1.2em; padding: 0;">
+              <li>Tourism information and recommendations</li>
+              <li>English ↔️ Kinyarwanda translation</li>
+              <li>Location and directions help</li>
+              <li>Weather information</li>
+            </ul>
+            <b>How to get started:</b><br>
+            Type <b>menu</b> to see all available services and start exploring!<br><br>
+            🇷🇼 <b>Ready to explore Rwanda? Type <span style="color:#136873">menu</span> to begin!</b>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chatbot Footer -->
+      <div class="chat-footer">
+        <form action="#" class="chat-form">
+          <textarea
+            placeholder="Message..."
+            class="message-input"
+            required
+          ></textarea>
+          <div class="chat-controls">
+            <button
+              type="button"
+              id="emoji-picker"
+              class="material-symbols-outlined"
+            >
+              sentiment_satisfied
+            </button>
+            <div class="file-upload-wrapper">
+              <input type="file" accept="image/*" id="file-input" hidden />
+              <img src="#" />
+              <button
+                type="button"
+                id="file-upload"
+                class="material-symbols-rounded"
+              >
+                attach_file
+              </button>
+              <button
+                type="button"
+                id="file-cancel"
+                class="material-symbols-rounded"
+              >
+                close
+              </button>
+            </div>
+            <button
+              type="submit"
+              id="send-message"
+              class="material-symbols-rounded"
+            >
+              arrow_upward
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div id="feedbackModal" class="feedback-modal" style="display: none">
+      <div class="feedback-modal-content">
+        <button
+          class="feedback-modal-close"
+          id="closeFeedbackModal"
+          title="Close"
+        >
+          &times;
+        </button>
+        <h3>We value your feedback!</h3>
+        <form id="feedbackForm">
+          <label for="feedbackReason">Reason</label>
+          <select id="feedbackReason" required>
+            <option value="">Select a reason</option>
+            <option value="Negative sentiment">Negative sentiment</option>
+            <option value="Feature request">Feature request</option>
+            <option value="Bug">Bug</option>
+            <option value="End of chat">End of chat</option>
+            <option value="Other">Other</option>
+          </select>
+          <label for="feedbackComment">Comment (optional)</label>
+          <textarea
+            id="feedbackComment"
+            rows="3"
+            placeholder="Your feedback..."
+          ></textarea>
+          <button type="submit" class="feedback-submit-btn">
+            Submit Feedback
+          </button>
+        </form>
+        <div
+          id="feedbackThankYou"
+          class="feedback-thankyou"
+          style="display: none"
+        >
+          <p>Thank you for your feedback!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Linking Emoji Mart script for emoji picker -->
+    <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+
+    <!-- Linking API utilities -->
+    <script src="./api.js"></script>
+
+    <!-- Linking custom script -->
+    <script src="./chatbot.js"></script>
+  </body>
+</html>

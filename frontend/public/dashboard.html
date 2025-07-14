@@ -1,1 +1,133 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hura - Dashboard</title>
+    <!-- CSS Styling -->
+    <link rel="stylesheet" href="/dash.css" />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/f418c1c995.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Favicon Links -->
+    <link rel="icon" href="Favicon.png" type="image/png" />
+    <link rel="icon" href="Favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <a href="#"
+              ><img
+                src="../public/images/logo.png"
+                width="130px"
+                height="50px"
+                alt="logo"
+            /></a>
+          </div>
+
+          <button class="hamburger-menu" id="hamburgerMenu">
+            <span class="hamburger-icon">☰</span>
+            <span class="close-icon">✕</span>
+          </button>
+        </div>
+
+        <nav class="nav-menu" id="navMenu">
+          <a href="#" class="nav-item active">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+          </a>
+
+          <a href="./setting.html" class="nav-item">
+            <i class="fas fa-cog"></i>
+            Settings
+          </a>
+
+          <a href="./feedback.html" class="nav-item">
+            <i class="fas fa-comment-alt"></i>
+            Feedback
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Main Header -->
+        <header class="main-header">
+          <h1>Dashboard</h1>
+          <div class="header-controls">
+            <div class="user-profile">
+              <span id="adminName">Loading...</span>
+              <div class="user-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Live Metrics -->
+        <section class="live-metrics">
+          <h2>Live Metrics</h2>
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <p class="metric-title">Total Active Users</p>
+              <p class="metric-value" id="total-users">--</p>
+            </div>
+            <div class="metric-card">
+              <p class="metric-title">Total Messages</p>
+              <p class="metric-value" id="total-messages">--</p>
+            </div>
+            <div class="metric-card">
+              <p class="metric-title">User Messages</p>
+              <p class="metric-value" id="user-messages">--</p>
+            </div>
+            <div class="metric-card">
+              <p class="metric-title">Bot Messages</p>
+              <p class="metric-value" id="bot-messages">--</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Charts -->
+        <section class="charts-section">
+          <div class="chart-container">
+            <h3>Total Messages</h3>
+            <canvas id="totalMessagesChart"></canvas>
+          </div>
+          <div class="chart-container">
+            <h3>User Messages</h3>
+            <canvas id="userMessagesChart"></canvas>
+          </div>
+          <div class="chart-container">
+            <h3>Bot Messages</h3>
+            <canvas id="botMessagesChart"></canvas>
+          </div>
+        </section>
+
+        <!-- Recent Activity Feed -->
+        <section class="activity-feed">
+          <h2>Recent Activity Feed</h2>
+          <ul class="activity-list" id="activity-list">
+            <!-- Activity items will be injected by JavaScript -->
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./dash.js"></script>
+  </body>
+</html>
