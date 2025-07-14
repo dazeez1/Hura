@@ -1,8 +1,8 @@
+const cors = require("cors");
 const dotenv = require("dotenv");
 // Load environment variables
 dotenv.config();
 const express = require("express");
-const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
@@ -13,17 +13,10 @@ require("./config/db");
 
 const app = express();
 
+// CORS middleware should be first
 app.use(
   cors({
-    origin: "https://huraaichat.com", // allow your frontend domain
-    credentials: true, // if you use cookies or authentication
-  })
-);
-
-app.options(
-  "*",
-  cors({
-    origin: process.env.CLIENT_URL,
+    origin: "https://huraaichat.com",
     credentials: true,
   })
 );
@@ -34,6 +27,12 @@ app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 app.use(cookieParser());
 app.use(morgan("dev"));
+app.use((req, res, next) => {
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+  next();
+});
 
 // Routes
 const authRoutes = require("./routes/auth");
