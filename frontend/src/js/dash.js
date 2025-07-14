@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function loadProfilePicture() {
     try {
       const response = await fetch(
-        `https://hura-backend-m2px6g6vi-damis-projects-8bd6b2ff.vercel.app/admin/profile`,
+        `https://hura-q92y.onrender.com/admin/profile`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -582,7 +582,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const fetchActivityFeed = async () => {
     try {
       const response = await fetch(
-        `https://hura-backend-m2px6g6vi-damis-projects-8bd6b2ff.vercel.app/chat/activity?limit=10`,
+        `https://hura-q92y.onrender.com/chat/activity?limit=10`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

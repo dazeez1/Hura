@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        "https://hura-backend-m2px6g6vi-damis-projects-8bd6b2ff.vercel.app/api/admin/profile",
+        "https://hura-q92y.onrender.com/api/admin/profile",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const token = localStorage.getItem("token");
     try {
       const res = await fetch(
-        "https://hura-backend-m2px6g6vi-damis-projects-8bd6b2ff.vercel.app/api/chat/feedback",
+        "https://hura-q92y.onrender.com/api/chat/feedback",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
