@@ -23,12 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Load profile picture from MongoDB
   async function loadProfilePicture() {
     try {
-      const response = await fetch(`https://huraaichat.com/admin/profile`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `https://hura-iz3f-2gvekm9s2-damis-projects-8bd6b2ff.vercel.app/admin/profile`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
@@ -579,7 +582,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const fetchActivityFeed = async () => {
     try {
       const response = await fetch(
-        `https://huraaichat.com/chat/activity?limit=10`,
+        `https://hura-iz3f-2gvekm9s2-damis-projects-8bd6b2ff.vercel.app/chat/activity?limit=10`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

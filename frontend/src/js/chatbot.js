@@ -802,16 +802,19 @@ if (feedbackForm) {
       return;
     }
     try {
-      const response = await fetch("https://huraaichat.com/api/chat/feedback", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          reason,
-          comment,
-          sessionId,
-          userId: user ? user.id : null,
-        }),
-      });
+      const response = await fetch(
+        "https://hura-iz3f-2gvekm9s2-damis-projects-8bd6b2ff.vercel.app/api/chat/feedback",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            reason,
+            comment,
+            sessionId,
+            userId: user ? user.id : null,
+          }),
+        }
+      );
       if (response.ok) {
         console.log("Feedback submitted successfully");
       } else {

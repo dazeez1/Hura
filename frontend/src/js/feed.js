@@ -13,12 +13,15 @@ document.addEventListener("DOMContentLoaded", () => {
   async function loadProfilePicture() {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("https://huraaichat.com/api/admin/profile", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://hura-iz3f-2gvekm9s2-damis-projects-8bd6b2ff.vercel.app/api/admin/profile",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
@@ -71,9 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
   async function fetchFeedback() {
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch("https://huraaichat.com/api/chat/feedback", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await fetch(
+        "https://hura-iz3f-2gvekm9s2-damis-projects-8bd6b2ff.vercel.app/api/chat/feedback",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       const result = await res.json();
       if (result.success && Array.isArray(result.data)) {
         updateUI(result.data);

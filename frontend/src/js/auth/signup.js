@@ -85,11 +85,14 @@ if (signupForm) {
       return;
     }
     try {
-      const response = await fetch("https://huraaichat.com/api/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ fullName, email, password, role }),
-      });
+      const response = await fetch(
+        "https://hura-iz3f-2gvekm9s2-damis-projects-8bd6b2ff.vercel.app/api/auth/signup",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ fullName, email, password, role }),
+        }
+      );
       const data = await response.json();
       if (response.ok) {
         showMessage(
@@ -133,11 +136,14 @@ if (loginForm) {
       return;
     }
     try {
-      const response = await fetch("https://huraaichat.com/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
+      const response = await fetch(
+        "https://hura-iz3f-2gvekm9s2-damis-projects-8bd6b2ff.vercel.app/api/auth/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        }
+      );
       const data = await response.json();
       if (response.ok) {
         showMessage(
@@ -212,7 +218,7 @@ if (forgotPasswordForm) {
     }
     try {
       const response = await fetch(
-        "https://huraaichat.com/api/auth/password-reset",
+        "https://hura-iz3f-2gvekm9s2-damis-projects-8bd6b2ff.vercel.app/api/auth/password-reset",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
