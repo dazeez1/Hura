@@ -803,7 +803,7 @@ if (feedbackForm) {
     }
     try {
       const response = await fetch(
-        "https://hura-backend-nebmri1u6-damis-projects-8bd6b2ff.vercel.app/api/chat/feedback",
+        "https://hura-backend-m2px6g6vi-damis-projects-8bd6b2ff.vercel.app/api/chat/feedback",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

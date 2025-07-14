@@ -16,7 +16,10 @@ const app = express();
 // CORS middleware should be first
 app.use(
   cors({
-    origin: "https://www.huraaichat.com",
+    origin: [
+      "https://www.huraaichat.com",
+      "https://hura-nocbqpknz-damis-projects-8bd6b2ff.vercel.app",
+    ],
     credentials: true,
   })
 );
