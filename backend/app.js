@@ -15,8 +15,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
-    credentials: true,
+    origin: "https://huraaichat.com", // allow your frontend domain
+    credentials: true, // if you use cookies or authentication
   })
 );
 
