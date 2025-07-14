@@ -366,7 +366,7 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.removeItem("user");
 
       // Redirect to login page
-      window.location.href = "./auth/signup.html";
+      window.location.href = "/signup.html";
     });
   }
 });
