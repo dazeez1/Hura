@@ -98,7 +98,7 @@ const handleOutgoingMessage = async (e) => {
       userData.message.trim().toLowerCase()
     )
   ) {
-    const errorMessage = `<img src="../../public/Favicon.png" class="bot-avatar" alt="logo" />
+    const errorMessage = `<img src="./Favicon.png" class="bot-avatar" alt="logo" />
       <div class="message-text">
         ❌ Please select a valid option (1-4).<br><br>
         📋 <b>Main Menu</b><br><br>
@@ -156,7 +156,7 @@ const handleOutgoingMessage = async (e) => {
 
   // Intercept 'menu' command and show custom menu
   if (userData.message.trim().toLowerCase() === "menu") {
-    const menuMessage = `<img src="../../public/Favicon.png" class="bot-avatar" alt="logo" />
+    const menuMessage = `<img src="./Favicon.png" class="bot-avatar" alt="logo" />
       <div class="message-text">
         📋 <b>Main Menu</b><br><br>
         Please select a service:<br><br>
@@ -190,7 +190,7 @@ const handleOutgoingMessage = async (e) => {
   // Intercept 'quit' command and reset chat
   if (userData.message.trim().toLowerCase() === "quit") {
     // Optionally clear chat or reset state here
-    const quitMessage = `<img src="../../public/Favicon.png" class="bot-avatar" alt="logo" />
+    const quitMessage = `<img src="./Favicon.png" class="bot-avatar" alt="logo" />
       <div class="message-text">Chat has been reset. Type <b>menu</b> to start again.</div>`;
     const quitDiv = createMessageElement(quitMessage, "bot-message");
     chatBody.appendChild(quitDiv);
@@ -208,7 +208,7 @@ const handleOutgoingMessage = async (e) => {
   // Intercept '1' command and show Q&A service info, enter Q&A mode
   if (userData.message.trim() === "1") {
     chatbotMode = "qa";
-    const qaMessage = `<img src="../../public/Favicon.png" class="bot-avatar" alt="logo" />
+    const qaMessage = `<img src="./Favicon.png" class="bot-avatar" alt="logo" />
       <div class="message-text">
         🤖 <b>Question & Answer Service</b><br><br>
         I can answer questions about Kigali, Rwanda, tourism, culture, and attractions.<br><br>
@@ -241,7 +241,7 @@ const handleOutgoingMessage = async (e) => {
   if (userData.message.trim() === "2") {
     chatbotMode = "translation";
     chatbotTranslationDirection = null;
-    const translationMessage = `<img src="../../public/Favicon.png" class="bot-avatar" alt="logo" />
+    const translationMessage = `<img src="./Favicon.png" class="bot-avatar" alt="logo" />
       <div class="message-text">
         🔄 <b>Translation Service</b><br><br>
         Choose a translation direction:<br><br>
@@ -277,7 +277,7 @@ const handleOutgoingMessage = async (e) => {
     userData.message.trim().toLowerCase() === "a"
   ) {
     chatbotTranslationDirection = "en2rw";
-    const en2rwMessage = `<img src="../../public/Favicon.png" class="bot-avatar" alt="logo" />
+    const en2rwMessage = `<img src="./Favicon.png" class="bot-avatar" alt="logo" />
       <div class="message-text">
         🔄 <b>English to Kinyarwanda Translation</b><br><br>
         Please type the English text you want to translate:<br><br>
@@ -302,7 +302,7 @@ const handleOutgoingMessage = async (e) => {
     userData.message.trim().toLowerCase() === "b"
   ) {
     chatbotTranslationDirection = "rw2en";
-    const rw2enMessage = `<img src="../../public/Favicon.png" class="bot-avatar" alt="logo" />
+    const rw2enMessage = `<img src="./Favicon.png" class="bot-avatar" alt="logo" />
       <div class="message-text">
         🔄 <b>Kinyarwanda to English Translation</b><br><br>
         Please type the Kinyarwanda text you want to translate:<br><br>
@@ -326,7 +326,7 @@ const handleOutgoingMessage = async (e) => {
   // Intercept '3' command and show Location service info, enter location mode
   if (userData.message.trim() === "3") {
     chatbotMode = "location";
-    const locationMessage = `<img src="../../public/Favicon.png" class="bot-avatar" alt="logo" />
+    const locationMessage = `<img src="./Favicon.png" class="bot-avatar" alt="logo" />
       <div class="message-text">
         🗺️ <b>Location Service</b><br><br>
         I can help you find places and get directions in Kigali.<br><br>
@@ -362,7 +362,7 @@ const handleOutgoingMessage = async (e) => {
     )
   ) {
     setTimeout(async () => {
-      const messageContent = `<img src="../../public/Favicon.png" class="bot-avatar" alt="logo" /> 
+      const messageContent = `<img src="./Favicon.png" class="bot-avatar" alt="logo" /> 
             <div class="message-text">
               <div class="thinking-indicator">
                 <div class="dot"></div>
@@ -418,7 +418,7 @@ const handleOutgoingMessage = async (e) => {
   // Intercept '4' command and show Weather service info, enter weather mode
   if (userData.message.trim() === "4") {
     chatbotMode = "weather";
-    const weatherMessage = `<img src="../../public/Favicon.png" class="bot-avatar" alt="logo" />
+    const weatherMessage = `<img src="./Favicon.png" class="bot-avatar" alt="logo" />
       <div class="message-text">
         🌤️ <b>Weather Service</b><br><br>
         I can provide weather information for Kigali.<br><br>
@@ -454,7 +454,7 @@ const handleOutgoingMessage = async (e) => {
     )
   ) {
     setTimeout(async () => {
-      const messageContent = `<img src="../../public/Favicon.png" class="bot-avatar" alt="logo" /> 
+      const messageContent = `<img src="./Favicon.png" class="bot-avatar" alt="logo" /> 
             <div class="message-text">
               <div class="thinking-indicator">
                 <div class="dot"></div>
@@ -493,7 +493,7 @@ const handleOutgoingMessage = async (e) => {
   if (chatbotMode === "qa") {
     // Simulate bot response with thinking indicator after a delay
     setTimeout(() => {
-      const messageContent = `<img src="../../public/Favicon.png" class="bot-avatar" alt="logo" /> 
+      const messageContent = `<img src="./Favicon.png" class="bot-avatar" alt="logo" /> 
             <div class="message-text">
               <div class="thinking-indicator">
                 <div class="dot"></div>
@@ -523,7 +523,7 @@ const handleOutgoingMessage = async (e) => {
   ) {
     // Show thinking indicator
     setTimeout(async () => {
-      const messageContent = `<img src="../../public/Favicon.png" class="bot-avatar" alt="logo" /> 
+      const messageContent = `<img src="./Favicon.png" class="bot-avatar" alt="logo" /> 
             <div class="message-text">
               <div class="thinking-indicator">
                 <div class="dot"></div>
@@ -568,7 +568,7 @@ const handleOutgoingMessage = async (e) => {
 
   // Simulate bot response with thinking indicator after a delay
   setTimeout(() => {
-    const messageContent = `<img src="../../public/Favicon.png" class="bot-avatar" alt="logo" /> 
+    const messageContent = `<img src="./Favicon.png" class="bot-avatar" alt="logo" /> 
           <div class="message-text">
             <div class="thinking-indicator">
               <div class="dot"></div>
@@ -704,7 +704,7 @@ if (clearChatBtn) {
       chatHistory.length = 0;
       renderChatHistory([]);
       // Show welcome message again
-      const welcome = `<img src='../../public/Favicon.png' class='bot-avatar' alt='logo' />
+      const welcome = `<img src='./Favicon.png' class='bot-avatar' alt='logo' />
         <div class='message-text'>🌍 <b>Welcome to Hura Tourism Chatbot!</b><br><br>I'm your AI assistant for exploring Kigali, Rwanda. I can help you with:<ul style='margin: 0.5em 0 0.5em 1.2em; padding: 0;'><li>Tourism information and recommendations</li><li>English ↔️ Kinyarwanda translation</li><li>Location and directions help</li><li>Weather information</li></ul><b>How to get started:</b><br>Type <b>menu</b> to see all available services and start exploring!<br><br>🇷🇼 <b>Ready to explore Rwanda? Type <span style='color:#136873'>menu</span> to begin!</b></div>`;
       chatBody.appendChild(createMessageElement(welcome, "bot-message"));
       chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "smooth" });
@@ -718,7 +718,7 @@ if (clearChatBtn) {
 if (logoutBtn) {
   logoutBtn.addEventListener("click", async () => {
     // Show logout message in chat
-    const logoutMessage = `<img src="../../public/Favicon.png" class="bot-avatar" alt="logo" />
+    const logoutMessage = `<img src="./Favicon.png" class="bot-avatar" alt="logo" />
       <div class="message-text">
         Logging out... Thank you for using Hura!
       </div>`;
