@@ -11,7 +11,7 @@
 body {
   width: 100%;
   min-height: 100vh;
-  background-image: url(../public/images/chatbot-bg.jpeg);
+  background-image: url(./images/chatbot-bg.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
