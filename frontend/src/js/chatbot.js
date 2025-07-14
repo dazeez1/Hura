@@ -739,7 +739,7 @@ if (logoutBtn) {
       endChatSessionIfNeeded();
 
       // Redirect to main page (different from settings)
-      window.location.href = "../../../index.html";
+      window.location.href = "/";
     }, 2000);
   });
 }
