@@ -1,7 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Authentication check for admin access
+  const token = localStorage.getItem("token");
+  const user = JSON.parse(localStorage.getItem("user") || "null");
+  if (!token || !user || user.role !== "admin") {
+    window.location.href = "/signup.html";
+    return;
+  }
   // Display admin name in feedback user-profile area
   const adminNameFeedback = document.getElementById("adminNameFeedback");
-  const user = JSON.parse(localStorage.getItem("user") || "null");
   if (adminNameFeedback && user && user.fullName) {
     adminNameFeedback.textContent = user.fullName;
   }

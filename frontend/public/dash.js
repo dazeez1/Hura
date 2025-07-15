@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const user = JSON.parse(localStorage.getItem("user") || "null");
 
   if (!token || !user || user.role !== "admin") {
-    window.location.href = "./auth/signup.html";
+    window.location.href = "/signup.html";
     return;
   }
 
