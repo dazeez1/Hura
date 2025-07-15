@@ -248,3 +248,23 @@ if (forgotPasswordForm) {
     }
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const switchToLogin = document.getElementById("switchToLogin");
+  const loginForm = document.getElementById("loginForm");
+  const signupForm = document.getElementById("signupForm");
+
+  if (switchToLogin && loginForm && signupForm) {
+    switchToLogin.addEventListener("click", function (e) {
+      e.preventDefault();
+      // If login form is hidden, show it (switch forms)
+      if (loginForm.style.display === "none" || !loginForm.style.display) {
+        signupForm.style.display = "none";
+        loginForm.style.display = "";
+      } else {
+        // If login form is already visible, submit it
+        loginForm.requestSubmit();
+      }
+    });
+  }
+});
